@@ -28,48 +28,21 @@ public class Product {
         return productRepository;
     }
 
-    //<<< Clean Arch / Port Method
     public static void decreaseStock(DeliveryCompleted deliveryCompleted) {
-        /** Example 1:  new item 
-        Product product = new Product();
-        repository().save(product);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(deliveryCompleted.get???()).ifPresent(product->{
-            
-            product // do something
+        repository().findById(deliveryCompleted.getProductId()).ifPresent(product->{
+            product.setStock(product.getStock() - deliveryCompleted.getQty());
             repository().save(product);
-
-
          });
-        */
 
     }
 
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void increaseStock(DeliveryCanceled deliveryCanceled) {
-        /** Example 1:  new item 
-        Product product = new Product();
-        repository().save(product);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deliveryCanceled.get???()).ifPresent(product->{
-            
-            product // do something
+        repository().findById(deliveryCanceled.getProductId()).ifPresent(product->{
+            product.setStock(product.getStock() + deliveryCanceled.getQty());
             repository().save(product);
 
-
          });
-        */
-
     }
-    //>>> Clean Arch / Port Method
 
 }

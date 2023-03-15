@@ -31,9 +31,7 @@ spring:
           destination: mall
           contentType: application/json
         event-out:
-//<<< EDA / Topic Name
           destination: mall
-//>>> EDA / Topic Name
           contentType: application/json
 
 logging:

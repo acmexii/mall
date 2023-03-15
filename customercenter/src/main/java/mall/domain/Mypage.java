@@ -11,7 +11,7 @@ import lombok.Data;
 public class Mypage {
 
     @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private Long customerId;

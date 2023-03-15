@@ -23,8 +23,7 @@ public class PolicyHandler {
     public void whatever(@Payload String eventString) {}
 
     @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='DeliveryCompleted'"
+        value = KafkaProcessor.INPUT, condition = "headers['type']=='DeliveryCompleted'"
     )
     public void wheneverDeliveryCompleted_DecreaseStock(
         @Payload DeliveryCompleted deliveryCompleted
